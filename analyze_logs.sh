@@ -5,7 +5,7 @@ echo "========================"
 all=$(grep -c $ access.log)
 echo "Общее количество запросов:	$all"
 ip1=$(awk '{a[$1]++}END{for(i in a)print a[i],i}' access.log > ip.log | grep -c $ ip.log)
-echo "Количество уникальным IP-адресов:        $ip1"
+echo "Количество уникальных IP-адресов:        $ip1"
 echo " "
 get=$(awk '/GET/ {count++} END {print count}' access.log)
 post=$(awk '/POST/ {count++} END {print count}' access.log)
